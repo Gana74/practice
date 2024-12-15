@@ -30,9 +30,10 @@ const App = () => {
   //     setResult({ status: "error", error: error.message });
   //   }
   // };
-  const API_URL =
-    process.env.REACT_APP_API_URL ||
-    "https://practice-ashen-one.vercel.app/execute";
+  // const API_URL =
+  //   process.env.REACT_APP_API_URL ||
+  //   "https://practice-ashen-one.vercel.app/execute";
+  const API_URL = process.env.REACT_APP_API_URL || "/api/execute";
 
   const handleRunCode = async () => {
     try {

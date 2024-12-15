@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/execute.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/execute",
+      "methods": ["POST"],
+      "dest": "api/execute.js"
+    }
+  ]
+}
