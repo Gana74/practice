@@ -31,7 +31,8 @@ const App = () => {
   //   }
   // };
   const API_URL =
-    process.env.REACT_APP_API_URL || "https://practice-ashen-one.vercel.app/";
+    process.env.REACT_APP_API_URL ||
+    "https://practice-ashen-one.vercel.app/execute";
 
   const handleRunCode = async () => {
     try {
