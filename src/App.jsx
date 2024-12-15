@@ -9,9 +9,32 @@ const App = () => {
   const [language, setLanguage] = useState("python");
   const [result, setResult] = useState(null);
 
+  // const handleRunCode = async () => {
+  //   try {
+  //     const response = await fetch("http://localhost:3001/execute", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ language, code }),
+  //     });
+
+  //     if (!response.ok) {
+  //       throw new Error(`Error: ${response.statusText}`);
+  //     }
+
+  //     const data = await response.json();
+  //     setResult(data);
+  //   } catch (error) {
+  //     console.error("Error executing code:", error);
+  //     setResult({ status: "error", error: error.message });
+  //   }
+  // };
+  const API_URL = process.env.REACT_APP_API_URL || "https://your-server.com";
+
   const handleRunCode = async () => {
     try {
-      const response = await fetch("http://localhost:3001/execute", {
+      const response = await fetch(`${API_URL}/execute`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,7 +53,6 @@ const App = () => {
       setResult({ status: "error", error: error.message });
     }
   };
-
   return (
     <div className="app">
       <h1>CodeE - Online Code Editor</h1>
